@@ -1,0 +1,78 @@
+.login{
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  color: white;
+}
+.loginb{
+  padding-top: 5px;
+}
+.form{
+
+  border-radius: 28px;
+  border-color: rgb(44, 7, 130);
+   
+  margin-top: 75px;
+  border:2px solid rgb(44, 7, 130);
+ 
+}
+a:link{
+  color: white;
+}
+a:link{
+  color:rgb(44, 7, 130);
+}
+
+input[type=text] {
+  display: inherit;
+    width: 30%;
+    padding: 10px 5px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  
+  input[type=text]:focus {
+    border: 3px solid #555;
+  }
+  
+  input[type=password] {
+    display: inherit;
+    width: 30%;
+    padding: 10px 5px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  
+  input[type=password]:focus {
+    border: 3px solid #555;
+  }
+  
+  label {
+      font-size: large;
+      margin-left: 23%;
+    width: 150px;
+    float: left;
+  }
+  .btn {
+      padding: 10px 40px;
+      font-size: 15px;
+      color: white;
+      background: rgb(44, 7, 130);
+      border: none;
+      border-radius: 5px;
+  }
+  .success {
+    padding: 4px 10px;
+      color: rgb(44, 7, 130); 
+      background: #dff0d8; 
+      border: 1px solid rgb(44, 7, 130);
+      margin-bottom: 20px;
+  }

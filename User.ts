@@ -1,0 +1,30 @@
+export class User{
+    userid:number;
+    title:string;
+    firstname:string;
+    middlename:string;
+    lastname:string;
+    fathername:string;
+    mobile:number;
+    email:string;
+    aadhar:number;
+    dob:string;
+    resaddrlane1:string;
+    resaddrlane2:string;
+    reslandmark:string;
+    resstate:string;
+    rescity:string;
+    respincode:string;
+    peraddrlane1:string;
+    peraddrlane2:string;
+    perlandmark:string;
+    perstate:string;
+    percity:string;
+    perpincode:string;
+    occutype:string;
+    incsource:string;
+    annincome:number;
+    netbanking:boolean;
+    status:string;
+    constructor(){}  
+}

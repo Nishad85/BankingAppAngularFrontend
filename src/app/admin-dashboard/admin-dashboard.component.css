@@ -1,0 +1,34 @@
+.btnApprove
+{
+  
+    border: 3px solid rgb(21, 153, 17);
+    border-radius:0.7rem;
+    padding: 8px 10px;
+    width: 50%;
+    cursor: pointer;
+    background: rgb(21, 153, 17);
+    transition: 0.3s;
+    color: white;
+}
+
+.btnReject
+{
+  
+    border: 3px solid rgb(233, 23, 23);
+    border-radius:0.7rem;
+    padding: 8px 10px;
+    width: 50%;
+    cursor: pointer;
+    background: rgb(233, 23, 23);
+    transition: 0.3s;
+    color: white;
+}
+
+.table,th,td{
+border: 1px solid black;
+text-align: center;
+}
+
+.table-hover{
+    width: 100%;
+}

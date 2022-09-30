@@ -1,0 +1,142 @@
+<nav class="navbar  sticky-top navbar-expand-lg   " style="margin: 0 auto 0; background-color: rgb(44, 7, 130);padding-top: 0px;" >
+    <!-- Navbar content -->
+      <!--logo  -->
+      <a class="navbar-brand" routerLink="/dashboard" routerLinkActive="active"  style="color: white; padding-left: 15px; padding-right: 7%;">Aspire Bank</a>
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        <ul class="  navbar-nav mr-auto" style="padding-top:25px;">
+              <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+                
+                  <a class="nav-link active" routerLink="/view-profile" routerLinkActive="active">
+                   <i class="fa fa-bank"></i>
+                      Account Details
+                  </a>
+               
+              </li>
+  
+              <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+                <a class="nav-link" routerLink="/account-statement" routerLinkActive="active">
+                  <i class="fas fa-home"></i>
+                  Account Statement
+              </a>
+              </li>
+  
+              <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+                
+                  <a class="nav-link" routerLink="/add-beneficiary" routerLinkActive="active">
+                   <i class="fa fa-bank"></i>
+                      Add Beneficiary
+                  </a>
+               
+              </li>
+  
+               
+                 
+                     <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px; ">
+                         <a class="nav-link" routerLink="/imps-banking" routerLinkActive="active">IMPS Transfer</a><br>
+                     </li>
+                     <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+                         <a class="nav-link" routerLink="/rtgs-banking" routerLinkActive="active">RTGS Transfer </a><br>
+                     </li>
+                     <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+                         <a class="nav-link" routerLink="/neft-banking" routerLinkActive="active">NEFT Transfer</a><br>
+                     </li>
+          
+        </ul>
+        
+        <form class="form-inline  my-2 my-lg-1">
+          <a  routerLink="/logout-user" routerLinkActive="active"> 
+        <button class="btn btnLogout" style="font-family: 'Montserrat', sans-serif;"  name="logout-user" type="submit">LogOut</button>
+        </a>
+  
+        </form>
+  </div>
+  </nav>
+  
+  <div class="grid-container" style="margin-top: 0%;">
+      <div class="item1">
+          <!-- Sidebar  -->
+           <nav id="sidebar" >
+           <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+          alt="Avatar" class="img-fluid my-5" style="width: 80px; margin-left: 30%;" />
+          <p style="color: white; margin-left: 15%;">Customer Id:{{customeridsessionstorage}} </p>
+         
+            <a  routerLink="/logout-user" style="margin-left: 35%;" >Logout</a>
+       
+             <ul class="list-unstyled components" >
+              <li>
+                  <a class="active" routerLink="/view-profile" routerLinkActive="active"  style="padding-left: 15%;">
+                   <i class="fa fa-bank"></i>
+                      Account Details
+                  </a>
+               </li>
+                 <li>
+                     <a routerLink="/account-statement" routerLinkActive="active" style="padding-left: 15%;">
+                         <i class="fas fa-home"></i>
+                         Account Statement
+                     </a>
+                 </li>
+                 <br>
+                 <li>
+              
+                    <a class="nav-link" routerLink="/add-beneficiary" routerLinkActive="active" style="padding-left: 15%;">
+                     <i class="fa fa-bank"></i>
+                        Add Beneficiary
+                    </a>
+                 
+                </li>
+                 <li >
+                  <a class="nav-link" routerLink="/imps-banking" routerLinkActive="active" style="padding-left: 25%;">IMPS Transfer</a><br>
+              </li>
+              <li >
+                  <a class="nav-link" routerLink="/rtgs-banking" routerLinkActive="active" style="padding-left: 25%;">RTGS Transfer </a><br>
+              </li>
+              <li >
+                  <a class="nav-link" routerLink="/neft-banking" routerLinkActive="active" style="padding-left: 25%;">NEFT Transfer</a><br>
+              </li>
+   
+                 
+             
+            </ul>
+         </nav></div>
+    <div class="item2"><div id="content">
+        <h1 >
+            <div class="a1" style="width:300px;height:50px;">Account Statement</div>
+            
+        </h1>
+        
+        <div class="container-sm" style="text-align:right;">
+            <table class="table" id="Statement">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Remarks</th>
+                        <th>Status</th>
+                    </tr>
+    
+                </thead>
+                <tbody> 
+                        <tr *ngFor="let t of trans.slice().reverse()">
+                        <td>{{t.trans_id}}</td>
+                        <td>{{t.trans_type}}</td>
+                        <td>{{t.trans_amount}}</td>
+                        <td>{{t.from_accno}}</td>
+                        <td>{{t.to_accno}}</td>
+                        <td>{{t.remarks}}</td>
+                        <td>{{t.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    </div></div>
+ 

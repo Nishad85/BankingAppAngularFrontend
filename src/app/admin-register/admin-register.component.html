@@ -1,0 +1,24 @@
+<nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+  <ul class="navbar-nav">
+    <li><a  routerLink="/admin-dashboard" class="nav-link"> All users</a></li>
+    <li><a  routerLink="/admin-register" class="nav-link">Create admin</a></li>
+    <li><a  routerLink="/logout" class="nav-link">LogOut</a></li>
+    </ul>
+  </nav>
+
+<h2 align="center">Welcome To Admin Register page</h2>
+<br><br><br>
+<form>  
+    <div class="container" style="text-align: center;" >  
+      <form (ngSubmit)="saveAdmin()"> 
+        <label>User ID: </label>   
+        <input type="text" placeholder="Enter adminId" [(ngModel)]="admin.adminId"  name="adminId" required> 
+        <br> <br>
+        <label>Password : </label>   
+        <input type="password" placeholder="Enter Password" [(ngModel)]="admin.password" name="password" required> 
+        <br> <br>
+        <button type="submit">Add New User</button>     
+      </form>   
+        
+    </div>   
+</form>     

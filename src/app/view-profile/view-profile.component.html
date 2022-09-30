@@ -1,0 +1,190 @@
+<nav class="navbar  sticky-top navbar-expand-lg   " style="margin: 0 auto 0; background-color: rgb(44, 7, 130);padding-top: 0px;" >
+  <!-- Navbar content -->
+    <!--logo  -->
+    <a class="navbar-brand" routerLink="/dashboard" routerLinkActive="active"  style="color: white; padding-left: 15px; padding-right: 7%;">Aspire Bank</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      <ul class="  navbar-nav mr-auto" style="padding-top:25px;">
+            <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+              
+                <a class="nav-link active" routerLink="/view-profile" routerLinkActive="active">
+                 <i class="fa fa-bank"></i>
+                    Account Details
+                </a>
+             
+            </li>
+
+            <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+              <a class="nav-link" routerLink="/account-statement" routerLinkActive="active">
+                <i class="fas fa-home"></i>
+                Account Statement
+            </a>
+            </li>
+
+            <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+              
+                <a class="nav-link" routerLink="/add-beneficiary" routerLinkActive="active">
+                 <i class="fa fa-bank"></i>
+                    Add Beneficiary
+                </a>
+             
+            </li>
+
+             
+               
+                   <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px; ">
+                       <a class="nav-link" routerLink="/imps-banking" routerLinkActive="active">IMPS Transfer</a><br>
+                   </li>
+                   <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+                       <a class="nav-link" routerLink="/rtgs-banking" routerLinkActive="active">RTGS Transfer </a><br>
+                   </li>
+                   <li class="nav-item active" style="color: white; padding-left: 5px; padding-right: 10px;">
+                       <a class="nav-link" routerLink="/neft-banking" routerLinkActive="active">NEFT Transfer</a><br>
+                   </li>
+        
+      </ul>
+      
+      <form class="form-inline  my-2 my-lg-1">
+        <a  routerLink="/logout-user" routerLinkActive="active"> 
+      <button class="btn btnLogout" style="font-family: 'Montserrat', sans-serif;"  name="logout-user" type="submit">LogOut</button>
+      </a>
+
+      </form>
+</div>
+</nav>
+
+<div class="grid-container" style="margin-top: 0%;">
+    <div class="item1">
+        <!-- Sidebar  -->
+         <nav id="sidebar" >
+         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+        alt="Avatar" class="img-fluid my-5" style="width: 80px; margin-left: 30%;" />
+        <p style="color: white; margin-left: 15%;">Welcome, {{cust.user.firstname}} </p>
+       
+          <a  routerLink="/logout-user" style="margin-left: 35%;" >Logout</a>
+     
+           <ul class="list-unstyled components" >
+            <li>
+                <a class="active" routerLink="/view-profile" routerLinkActive="active"  style="padding-left: 15%;">
+                 <i class="fa fa-bank"></i>
+                    Account Details
+                </a>
+             </li>
+               <li>
+                   <a routerLink="/account-statement" routerLinkActive="active" style="padding-left: 15%;">
+                       <i class="fas fa-home"></i>
+                       Account Statement
+                   </a>
+               </li>
+               <br>
+               <li>
+              
+                <a class="nav-link" routerLink="/add-beneficiary" routerLinkActive="active" style="padding-left: 15%;">
+                 <i class="fa fa-bank"></i>
+                    Add Beneficiary
+                </a>
+             
+            </li> 
+               <li >
+                <a class="nav-link" routerLink="/imps-banking" routerLinkActive="active" style="padding-left: 25%;">IMPS Transfer</a><br>
+            </li>
+            <li >
+                <a class="nav-link" routerLink="/rtgs-banking" routerLinkActive="active" style="padding-left: 25%;">RTGS Transfer </a><br>
+            </li>
+            <li >
+                <a class="nav-link" routerLink="/neft-banking" routerLinkActive="active" style="padding-left: 25%;">NEFT Transfer</a><br>
+            </li>
+ 
+               
+           
+          </ul>
+       </nav></div>
+    <div class="item2"><div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+             
+              <div class="card-body p-4">
+                <h2>Account Information</h2>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h4>Customer Id </h4>
+                    <p class="text-muted">{{cust.customerid}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h4>Account Number</h4>
+                    <p class="text-muted">{{cust.accno}}</p>
+                  </div>
+                 
+                  <div class="col-6 mb-3">
+                    <h4>Account Balance</h4>
+                    <p class="text-muted">₹{{cust.accbal}}/-</p>
+                  </div>
+                </div>
+                <h2>Personal Information</h2>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-12 mb-3">
+                    <h4>Name</h4>
+                    <p class="text-muted">{{cust.user.firstname}} {{cust.user.middlename}} {{cust.user.lastname}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h4>Father Name</h4>
+                    <p class="text-muted">{{cust.user.fathername}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h4>Email</h4>
+                    <p class="text-muted">{{cust.user.email}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h4>Mobile</h4>
+                    <p class="text-muted">{{cust.user.mobile}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h4>Aadhar Number</h4>
+                    <p class="text-muted">{{cust.user.aadhar}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h4>Date Of Birth</h4>
+                    <p class="text-muted">{{cust.user.dob}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h4>Address</h4>
+                    <p class="text-muted">{{cust.user.resaddrlane1}}, {{cust.user.resaddrlane2}}, {{cust.user.reslandmark}}</p>
+                    <p class="text-muted">{{cust.user.rescity}}, {{cust.user.respincode}}, {{cust.user.resstate}} </p>                  
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h4>Occupation</h4>
+                    <p class="text-muted">{{cust.user.occutype}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h4>Annual Income</h4>
+                    <p class="text-muted">{{cust.user.annincome}}</p>
+                  </div>
+                 
+                </div>
+                <div class="d-flex justify-content-start">
+                  <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                  <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                  <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
+              </div>  
+            </div>
+        </nav>
+        <div class="container">
+          <div class="row d-flex ">
+            <div class="col col-lg-6 mb-4 mb-lg-0">
+              <div class="card mb-3" style="border-radius: .5rem;">
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>

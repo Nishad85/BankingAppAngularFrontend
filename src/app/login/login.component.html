@@ -1,0 +1,29 @@
+ 
+        <div class="container">  
+          <div class="form" style="background: white; margin-top:60px;" >
+            <div class="login"style="background: rgb(44, 7, 130); border-radius: 25px 25px 0px 0px ;">
+              <h1>Login</h1>
+            </div>
+            <br><br><br>
+          <form (ngSubmit)="login()"> 
+            <div class="form-group">
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" [(ngModel)]="loginobj.customerid" name="username" required>
+          </div> 
+            <br>
+            <div class="form-group">
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" [(ngModel)]="loginobj.password" name="password" required> 
+          </div> <br><br>
+          <div align="center">
+           <button type="submit" class="btnSubmit"> Login</button>
+           <a routerLink="/index" routerLinkActive="active"><button class="btnSubmit"> Back to Homepage</button></a>
+          </div>
+          </form>   
+            <br><div class="links" align="center">
+               <a routerLink="/create-user" routerLinkActive="active">First Time User? Register</a> <br>
+               <a routerLink="/forgot-password" routerLinkActive="active">Forgot password? </a><br><br>
+              </div>
+        </div>  
+   </div> 
+   

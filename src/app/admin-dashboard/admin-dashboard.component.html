@@ -1,0 +1,44 @@
+<nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+<ul class="navbar-nav">
+  <li><a  routerLink="/admin-dashboard" class="nav-link"> All users</a></li>
+  <li><a  routerLink="/admin-approve" class="nav-link">Approve customers</a></li>
+  <li><a  routerLink="/admin-register" class="nav-link">Create admin</a></li>
+  <li><a  routerLink="/logout" class="nav-link">LogOut</a></li>
+    <!-- <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li> -->
+  </ul>
+</nav>
+
+<table class="table table-hover">
+    <thead>
+       <tr style="font-size:18px;">
+            <th>Status</th>
+            <td>UserId</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Aadhar No</td>
+            <td>Date of Birth</td>
+            <td>City</td>
+            <td>State</td>
+            <td>Income</td>
+            <td>Application Status</td>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users.slice().reverse()">
+          <td><button class="btnApprove" id="submitButton" (click)="createCustomer(u.userid)">Approve</button>
+            <button class="btnReject" (click)="declineUser(u.userid)">Reject</button></td>
+            <td>{{u.userid}}</td>
+            <td>{{u.firstname}}</td>
+            <td>{{u.lastname}}</td>
+            <td>{{u.aadhar}}</td>
+            <td>{{u.dob}}</td>
+            <td>{{u.percity}}</td>
+            <td>{{u.perstate}}</td>
+            <td>{{u.annincome}}</td>
+            <td>{{u.status}}</td>
+            <!-- <td><button class="btnApprove" (click)="enableNet(u.userid)">Enable NetBanking</button></td> -->
+                </tr>
+            
+        </tbody>
+  </table>
+ 

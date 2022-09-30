@@ -1,0 +1,256 @@
+<div class="container create-container">
+    <div class="form">
+        <div class="note">
+            <h2>Open New Account</h2>
+        </div>
+        <div class="form form-content">
+<h1 align="center">Personal Details</h1>  
+    <form class="form-horizontal" [formGroup]="form" (ngSubmit)="registerUser()">
+        <div class="Personal details">  
+            <div class="form-group col-md-2">
+            <label for="title" class="form-label">Title</label> 
+              <select class="form-select " id="title">
+                <option value="default"></option>
+              <option value="mr">Mr.</option>
+              <option value="mrs">Mrs.</option>
+              <option value="ms">Ms.</option> 
+            </select>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="firstname" class="form-label">First Name <span style="color: red;">*</span> </label>   
+            <input type="text" name="firstname" class="form-control" id="firstname" formControlName="firstname" [(ngModel)]="user.firstname" placeholder="First Name" required>
+            <span class="text-danger"
+                *ngIf="(registerFormControl['firstname'].touched) && registerFormControl['firstname'].errors?.['required']">
+                      FirstName is required
+                  </span>    
+                </div>
+                <div class="form-group col">
+                    <label for="middlename" class="form-label">Middle Name</label>
+                    <input type="text" class="form-control" id="middlename" name="middlename" [(ngModel)]="user.middlename" placeholder="Middle Name" >
+                </div>
+                <div class="form-group col">
+                    <label for="lastname" class="form-label">Last Name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="lastname" formControlName="lastname" name="lastname" [(ngModel)]="user.lastname" placeholder="Last Name" >
+                <span class="text-danger"
+                *ngIf="(registerFormControl['lastname'].touched) && registerFormControl['lastname'].errors?.['required']">
+                      lastname is required
+                  </span> 
+             </div>
+              </div>
+
+
+
+            <div class="form-group col-md-4">
+                <label for="fathername" class="form-label">Father Name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="fathername" formControlName="fathername" name="fathername" [(ngModel)]="user.fathername" placeholder="Father Name" >
+                <span class="text-danger"
+                *ngIf="(registerFormControl['fathername'].touched) && registerFormControl['fathername'].errors?.['required']">
+                      fathername is required
+                  </span>
+            </div>
+
+            <br>
+
+            <div class="row">
+               
+            <div class="form-group col-md-6">
+                <label for="mobilenumber" class="control-label">Mobile Number <span style="color: red;">*</span></label>
+                <input type="number" class="form-control" id="mobilenumber" formControlName="mobilenumber" name="mobile" [(ngModel)]="user.mobile" placeholder="Mobile Number">
+                <span class="text-danger"
+                *ngIf="(registerFormControl['mobilenumber'].touched) && registerFormControl['mobilenumber'].errors?.['required']">
+                      mobilenumber is required
+                  </span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email" class="control-label">Email<span style="color: red;">*</span></label>
+                <input type="text" id="email" class="form-control" formControlName="email" name="email" [(ngModel)]="user.email" placeholder="Email">
+                <span class="text-danger"
+                *ngIf="(registerFormControl['email'].touched) && registerFormControl['email'].errors?.['required']">
+                      email is required
+                  </span>
+                </div>
+               
+              </div>
+
+
+              <br>
+              <div class="row">
+
+              <div class="form-group col-md-6">
+                <label for="aadhar" class="control-label">Aadhar Number <span style="color: red;">*</span></label>
+                <input type="number" class="form-control" id="aadhar" formControlName="aadhar" name="aadhar" [(ngModel)]="user.aadhar" placeholder="Aadhar no.">
+                <span class="text-danger"
+                *ngIf="(registerFormControl['aadhar'].touched) && registerFormControl['aadhar'].errors?.['required']">
+                      aadhar is required
+                  </span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="date" class="control-label">Date Of Birth <span style="color: red;">*</span></label>
+                <input type="date" class="form-control" id="date" formControlName="date" name="date" [(ngModel)]="user.dob">
+                <span class="text-danger"
+                *ngIf="(registerFormControl['date'].touched) && registerFormControl['date'].errors?.['required']">
+                      date of birth is required
+                  </span>
+            </div>
+</div>
+
+</div>
+    <br><br><br>
+        <div class="residentialadd">
+            <h1 align="center">Residential address</h1>
+            <div class="row">
+            <div class="form-group col-md">
+                <label for="resaddrlane1" class="form-label">Address Line 1 <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="resaddrlane1" formControlName="resaddrlane1" name="resaddrlane1" [(ngModel)]="user.resaddrlane1" placeholder="Address Line 1" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['resaddrlane1'].touched) && registerFormControl['resaddrlane1'].errors?.['required']">
+                      address is required
+                  </span>
+            </div>
+            <div class="form-group col-md">
+                <label for="resaddrline2" class="form-label">Address Line 2</label>
+                <input type="text" class="form-control" id="resaddrline2"  name="resaddrlane2" [(ngModel)]="user.resaddrlane2" placeholder="Address Line 2" required>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group col-md">
+                <label for="reslandmark" class="form-label">Landmark</label>
+                <input type="text" class="form-control" id="reslandmark" formControlName="reslandmark" name="reslandmark" [(ngModel)]="user.reslandmark" placeholder="Landmark" required>
+            </div>
+            <div class="form-group col-md">
+                <label for="resstate" class="form-label">State <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="resstate" formControlName="resstate" name="resstate" [(ngModel)]="user.resstate" placeholder="State" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['resstate'].touched) && registerFormControl['resstate'].errors?.['required']">
+                      state is required
+                  </span>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="form-group col-md">
+                <label for="rescity" class="form-label">City <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="rescity" formControlName="rescity" name="rescity" [(ngModel)]="user.rescity" placeholder="City" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['rescity'].touched) && registerFormControl['rescity'].errors?.['required']">
+                      city is required
+                  </span>
+            </div>
+            <div class="form-group col-md">
+                <label for="respincode" class="form-label">Pincode <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="respincode" formControlName="respincode" name="respincode" [(ngModel)]="user.respincode" placeholder="Pincode" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['respincode'].touched) && registerFormControl['respincode'].errors?.['required']">
+                      Pincode is required
+                  </span>
+            </div>
+        </div>
+</div>
+<br><br>
+
+        <br>
+        <div class="permanentadd">
+            <h1 align="center">Permanent Address</h1>
+            
+            <div class="form-group col" >
+                <input type="checkbox" class="form-controls" id="permanentaddress" (change)="updateAddress($event)">
+                <label for="permanentaddress" class="form-labels">Permanent address is same as residential address</label>
+            </div> 
+            <br><br>
+            <div class="row">
+            <div class="form-group col">
+                <label for="peraddressline1" class="form-label">Address Line 1 <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="peraddrline1" formControlName="peraddrlane1" name="peraddrlane1" [(ngModel)]="user.peraddrlane1" placeholder="Address Line 1" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['peraddrlane1'].touched) && registerFormControl['peraddrlane1'].errors?.['required']">
+                      address is required
+                  </span>
+            </div>
+            <div class="form-group col">
+                <label for="peraddressline2" class="form-label">Address Line 2</label>
+                <input type="text" class="form-control" id="peraddressline2" name="peraddrlane2" [(ngModel)]="user.peraddrlane2" placeholder="Address Line 2" required>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label for="perlandmark" class="form-label"> Landmark</label>
+                <input type="text" class="form-control" id="perlandmark" name="perlandmark" [(ngModel)]="user.perlandmark" placeholder="Landmark" required>
+            </div>
+            <div class="form-group col">
+                <label for="perstate" class="form-label">State <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="perstate" formControlName="perstate" name="perstate" [(ngModel)]="user.perstate" placeholder="State" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['perstate'].touched) && registerFormControl['perstate'].errors?.['required']">
+                      state is required
+                  </span>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col">
+                <label for="percity" class="form-label">City <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="percity" formControlName="percity" name="percity" [(ngModel)]="user.percity" placeholder="City" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['percity'].touched) && registerFormControl['percity'].errors?.['required']">
+                      city is required
+                  </span>
+            </div>
+            <div class="form-group col">
+                <label for="perpincode" class="form-label">Pincode <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="perpincode" formControlName="perpincode" name="perpincode" [(ngModel)]="user.perpincode"  placeholder="Pincode" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['perpincode'].touched) && registerFormControl['perpincode'].errors?.['required']">
+                      Pincode is required
+                  </span>
+            </div>
+</div>
+        </div>
+<br><br>
+
+
+        <div class="occupation" >
+            <h1 align="center">Occupation Details </h1>
+            <div class="row">
+            <div class="form-group col">
+                <label for="occupation" class="form-label">Occupation Type <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="occupation" formControlName="occutype" name="occutype" [(ngModel)]="user.occutype" placeholder="Occupation" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['occutype'].touched) && registerFormControl['occutype'].errors?.['required']">
+                      occupation is required
+                  </span>
+            </div>
+            <div class="form-group col">
+                <label for="incomesource" class="form-label">Source of Income <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="incomesource" formControlName="incsource" name="incsource" [(ngModel)]="user.incsource" placeholder="Income Source" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['incsource'].touched) && registerFormControl['incsource'].errors?.['required']">
+                      incomesource is required
+                  </span>
+            </div>
+            <div class="form-group col">
+                <label for="annualincome" class="form-label">Gross Annual Income <span style="color: red;">*</span> </label>
+                <input type="text" class="form-control" id="annualincome" formControlName="annincome" name="annincome" [(ngModel)]="user.annincome" placeholder="Annual Income" required>
+                <span class="text-danger"
+                *ngIf="(registerFormControl['annincome'].touched) && registerFormControl['annincome'].errors?.['required']">
+                      annual income is required
+                  </span>
+            </div>
+        </div>
+    </div><br><br>
+    <div class="form-group " align="center">
+       <button class="btnSubmit" type="submit" >Submit</button>
+       <a routerLink="/login" routerLinkActive="active"><button class="btnSubmit"> Login page</button></a>
+    </div>
+    </form></div>  </div>
+    </div>
+    <br><br><br>

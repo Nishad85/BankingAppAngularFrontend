@@ -1,0 +1,40 @@
+<nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+    <ul class="navbar-nav">
+        <li><a  routerLink="/admin-dashboard" class="nav-link"> All users</a></li>
+        <li><a  routerLink="/admin-approve" class="nav-link">Approve customers</a></li>
+        <li><a  routerLink="/admin-register" class="nav-link">Create admin</a></li>
+        <li><a  routerLink="/logout" class="nav-link">LogOut</a></li>
+        <!-- <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li> -->
+      </ul>
+    </nav>
+    
+    <table class="table table-hover">
+        <thead>
+           <tr style="font-size:18px;">
+                <th>Status</th>
+                <td>Custid</td>
+                <td>accno</td>
+                <td>acctype</td>
+                <td>accbal</td>
+                <td>password No</td>
+                <td>usesridcust</td>
+               
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of customers.slice().reverse()">
+                <td><button class="btnApprove" (click)="enableNet(c.customerid)">Enable NetBanking</button></td>
+                <td>{{c.customerid}}</td>
+                <td>{{c.accno}}</td>
+                <td>{{c.acctype}}</td>
+                <td>{{c.accbal}}</td>
+            
+                <td>{{c.password}}</td>
+                <td>{{c.useridcust}}</td>
+            
+                
+                    </tr>
+                
+            </tbody>
+      </table>
+     
